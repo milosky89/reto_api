@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="members.MemberRunner" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-23T20:52:38" hostname="MacBook-Pro-ML-140301.local" time="2.879">
+  <properties/>
+  <testcase name="testParallel()" classname="members.MemberRunner" time="2.879"/>
+  <system-out><![CDATA[15:52:39.131 [Test worker] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+15:52:39.135 [Test worker] INFO  com.intuit.karate.Suite - backed up existing 'build/karate-reports' dir to: build/karate-reports_1677185559134
+15:52:39.970 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+15:52:40.349 [Test worker] DEBUG com.intuit.karate - request:
+1 > DELETE http://localhost:5002/api/members/5
+1 > Authorization: Basic YWRtaW46YWRtaW4=
+1 > Accept: */*
+1 > Content-Type: application/json
+1 > Host: localhost:5002
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_362)
+1 > Accept-Encoding: gzip,deflate
+
+
+15:52:40.381 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 31
+1 < 404
+1 < X-Powered-By: QA BOX LET'S TEST
+1 < Access-Control-Allow-Origin: *
+1 < X-RateLimit-Limit: 2
+1 < X-RateLimit-Remaining: 1
+1 < Date: Thu, 23 Feb 2023 20:52:40 GMT
+1 < X-RateLimit-Reset: 1677185562
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 40
+1 < ETag: W/"28-BxTacsKqK0cKraORpQu0Ih89tjQ"
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"msg":"Member with id 5 doesn't exist"}
+
+15:52:40.386 [Test worker] ERROR com.intuit.karate - classpath:members/delete/delete_member.feature:15
+Then status 200
+status code was: 404, expected: 200, response time in milliseconds: 31, url: http://localhost:5002/api/members/5, response: 
+{"msg":"Member with id 5 doesn't exist"}
+classpath:members/delete/delete_member.feature:15
+15:52:40.397 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+15:52:40.405 [Test worker] DEBUG com.intuit.karate - request:
+1 > DELETE http://localhost:5002/api/members/222
+1 > Authorization: Basic YWRtaW46YWRtaW4=
+1 > Accept: */*
+1 > Content-Type: application/json
+1 > Host: localhost:5002
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_362)
+1 > Accept-Encoding: gzip,deflate
+
+
+15:52:40.408 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 2
+1 < 404
+1 < X-Powered-By: QA BOX LET'S TEST
+1 < Access-Control-Allow-Origin: *
+1 < X-RateLimit-Limit: 2
+1 < X-RateLimit-Remaining: 0
+1 < Date: Thu, 23 Feb 2023 20:52:40 GMT
+1 < X-RateLimit-Reset: 1677185562
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 42
+1 < ETag: W/"2a-5S8pxfKez/EJkpFhqlSt5Ki5YII"
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"msg":"Member with id 222 doesn't exist"}
+
+---------------------------------------------------------
+feature: classpath:members/delete/delete_member.feature
+scenarios:  2 | passed:  1 | failed:  1 | time: 0.3842
+---------------------------------------------------------
+
+15:52:40.945 [Test worker] INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 4 (0 remaining) classpath:members/delete/delete_member.feature
+15:52:40.951 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+15:52:40.956 [Test worker] DEBUG com.intuit.karate - request:
+1 > GET http://localhost:5002/api/members
+1 > Authorization: Basic YWRtaW46YWRtaW4=
+1 > Host: localhost:5002
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_362)
+1 > Accept-Encoding: gzip,deflate
+
+
+15:52:40.958 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 2
+1 < 429
+1 < X-Powered-By: QA BOX LET'S TEST
+1 < Access-Control-Allow-Origin: *
+1 < X-RateLimit-Limit: 2
+1 < X-RateLimit-Remaining: 0
+1 < Date: Thu, 23 Feb 2023 20:52:40 GMT
+1 < X-RateLimit-Reset: 1677185562
+1 < Retry-After: 20
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 90
+1 < ETag: W/"5a-t/9yHfGdyDBXrmqbvzabpvkOJ4o"
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+
+15:52:40.959 [Test worker] ERROR com.intuit.karate - classpath:members/get/get_member.feature:14
+Then status 200
+status code was: 429, expected: 200, response time in milliseconds: 2, url: http://localhost:5002/api/members, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/get/get_member.feature:14
+15:52:40.963 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+15:52:40.966 [Test worker] DEBUG com.intuit.karate - request:
+1 > GET http://localhost:5002/api/members/2
+1 > Authorization: Basic YWRtaW46YWRtaW4=
+1 > Host: localhost:5002
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_362)
+1 > Accept-Encoding: gzip,deflate
+
+
+15:52:40.968 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 1
+1 < 429
+1 < X-Powered-By: QA BOX LET'S TEST
+1 < Access-Control-Allow-Origin: *
+1 < X-RateLimit-Limit: 2
+1 < X-RateLimit-Remaining: 0
+1 < Date: Thu, 23 Feb 2023 20:52:40 GMT
+1 < X-RateLimit-Reset: 1677185562
+1 < Retry-After: 20
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 90
+1 < ETag: W/"5a-t/9yHfGdyDBXrmqbvzabpvkOJ4o"
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+
+15:52:40.969 [Test worker] ERROR com.intuit.karate - classpath:members/get/get_member.feature:22
+Then status 200
+status code was: 429, expected: 200, response time in milliseconds: 1, url: http://localhost:5002/api/members/2, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/get/get_member.feature:22
+15:52:40.974 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+15:52:40.977 [Test worker] DEBUG com.intuit.karate - request:
+1 > GET http://localhost:5002/api/members/200
+1 > Authorization: Basic YWRtaW46YWRtaW4=
+1 > Host: localhost:5002
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_362)
+1 > Accept-Encoding: gzip,deflate
+
+
+15:52:40.979 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 1
+1 < 429
+1 < X-Powered-By: QA BOX LET'S TEST
+1 < Access-Control-Allow-Origin: *
+1 < X-RateLimit-Limit: 2
+1 < X-RateLimit-Remaining: 0
+1 < Date: Thu, 23 Feb 2023 20:52:40 GMT
+1 < X-RateLimit-Reset: 1677185562
+1 < Retry-After: 20
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 90
+1 < ETag: W/"5a-t/9yHfGdyDBXrmqbvzabpvkOJ4o"
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+
+15:52:40.980 [Test worker] ERROR com.intuit.karate - classpath:members/get/get_member.feature:31
+Then status 404
+status code was: 429, expected: 404, response time in milliseconds: 1, url: http://localhost:5002/api/members/200, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/get/get_member.feature:31
+---------------------------------------------------------
+feature: classpath:members/get/get_member.feature
+scenarios:  3 | passed:  0 | failed:  3 | time: 0.0182
+---------------------------------------------------------
+
+15:52:41.078 [Test worker] INFO  com.intuit.karate.Suite - <<fail>> feature 2 of 4 (0 remaining) classpath:members/get/get_member.feature
+15:52:41.083 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+15:52:41.122 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:5002/api/members
+1 > Authorization: Basic YWRtaW46YWRtaW4=
+1 > Accept: */*
+1 > Content-Type: application/json
+1 > Content-Length: 33
+1 > Host: localhost:5002
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_362)
+1 > Accept-Encoding: gzip,deflate
+{"name":"Andres","gender":"male"}
+
+15:52:41.124 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 2
+1 < 429
+1 < X-Powered-By: QA BOX LET'S TEST
+1 < Access-Control-Allow-Origin: *
+1 < X-RateLimit-Limit: 2
+1 < X-RateLimit-Remaining: 0
+1 < Date: Thu, 23 Feb 2023 20:52:41 GMT
+1 < X-RateLimit-Reset: 1677185562
+1 < Retry-After: 20
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 90
+1 < ETag: W/"5a-t/9yHfGdyDBXrmqbvzabpvkOJ4o"
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+
+15:52:41.126 [Test worker] ERROR com.intuit.karate - classpath:members/post/post_member.feature:22
+Then status 201
+status code was: 429, expected: 201, response time in milliseconds: 2, url: http://localhost:5002/api/members, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/post/post_member.feature:22
+15:52:41.129 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+15:52:41.132 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:5002/api/members
+1 > Authorization: Basic YWRtaW46YWRtaW4=
+1 > Accept: */*
+1 > Content-Type: application/json
+1 > Content-Length: 32
+1 > Host: localhost:5002
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_362)
+1 > Accept-Encoding: gzip,deflate
+{"name":"M3ria","gender":"male"}
+
+15:52:41.135 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 2
+1 < 429
+1 < X-Powered-By: QA BOX LET'S TEST
+1 < Access-Control-Allow-Origin: *
+1 < X-RateLimit-Limit: 2
+1 < X-RateLimit-Remaining: 0
+1 < Date: Thu, 23 Feb 2023 20:52:41 GMT
+1 < X-RateLimit-Reset: 1677185562
+1 < Retry-After: 20
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 90
+1 < ETag: W/"5a-t/9yHfGdyDBXrmqbvzabpvkOJ4o"
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+
+15:52:41.136 [Test worker] ERROR com.intuit.karate - classpath:members/post/post_member.feature:37
+Then status 400
+status code was: 429, expected: 400, response time in milliseconds: 2, url: http://localhost:5002/api/members, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/post/post_member.feature:37
+15:52:41.140 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+15:52:41.144 [Test worker] DEBUG com.intuit.karate - request:
+1 > POST http://localhost:5002/api/members
+1 > Authorization: Basic YWRtaW46YWRtaW4=
+1 > Accept: */*
+1 > Content-Type: application/json
+1 > Content-Length: 35
+1 > Host: localhost:5002
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_362)
+1 > Accept-Encoding: gzip,deflate
+{"name":"Pedro","gender":"binario"}
+
+15:52:41.146 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 2
+1 < 429
+1 < X-Powered-By: QA BOX LET'S TEST
+1 < Access-Control-Allow-Origin: *
+1 < X-RateLimit-Limit: 2
+1 < X-RateLimit-Remaining: 0
+1 < Date: Thu, 23 Feb 2023 20:52:41 GMT
+1 < X-RateLimit-Reset: 1677185562
+1 < Retry-After: 20
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 90
+1 < ETag: W/"5a-t/9yHfGdyDBXrmqbvzabpvkOJ4o"
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+
+15:52:41.148 [Test worker] ERROR com.intuit.karate - classpath:members/post/post_member.feature:53
+Then status 400
+status code was: 429, expected: 400, response time in milliseconds: 2, url: http://localhost:5002/api/members, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/post/post_member.feature:53
+---------------------------------------------------------
+feature: classpath:members/post/post_member.feature
+scenarios:  3 | passed:  0 | failed:  3 | time: 0.0538
+---------------------------------------------------------
+
+15:52:41.240 [Test worker] INFO  com.intuit.karate.Suite - <<fail>> feature 3 of 4 (0 remaining) classpath:members/post/post_member.feature
+15:52:41.245 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+15:52:41.249 [Test worker] DEBUG com.intuit.karate - request:
+1 > PUT http://localhost:5002/api/members/1
+1 > Authorization: Basic YWRtaW46YWRtaW4=
+1 > Accept: */*
+1 > Content-Type: application/json
+1 > Content-Length: 33
+1 > Host: localhost:5002
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_362)
+1 > Accept-Encoding: gzip,deflate
+{"name":"Andres","gender":"male"}
+
+15:52:41.253 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 3
+1 < 429
+1 < X-Powered-By: QA BOX LET'S TEST
+1 < Access-Control-Allow-Origin: *
+1 < X-RateLimit-Limit: 2
+1 < X-RateLimit-Remaining: 0
+1 < Date: Thu, 23 Feb 2023 20:52:41 GMT
+1 < X-RateLimit-Reset: 1677185562
+1 < Retry-After: 20
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 90
+1 < ETag: W/"5a-t/9yHfGdyDBXrmqbvzabpvkOJ4o"
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+
+15:52:41.255 [Test worker] ERROR com.intuit.karate - classpath:members/put/put_member.feature:23
+Then status 200
+status code was: 429, expected: 200, response time in milliseconds: 3, url: http://localhost:5002/api/members/1, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/put/put_member.feature:23
+15:52:41.259 [Test worker] INFO  com.intuit.karate - karate.env system property was: null 
+15:52:41.264 [Test worker] DEBUG com.intuit.karate - request:
+1 > PUT http://localhost:5002/api/members/2
+1 > Authorization: Basic YWRtaW46YWRtaW4=
+1 > Accept: */*
+1 > Content-Type: application/json
+1 > Content-Length: 19
+1 > Host: localhost:5002
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_362)
+1 > Accept-Encoding: gzip,deflate
+{"name":"Fernando"}
+
+15:52:41.267 [Test worker] DEBUG com.intuit.karate - response time in milliseconds: 2
+1 < 429
+1 < X-Powered-By: QA BOX LET'S TEST
+1 < Access-Control-Allow-Origin: *
+1 < X-RateLimit-Limit: 2
+1 < X-RateLimit-Remaining: 0
+1 < Date: Thu, 23 Feb 2023 20:52:41 GMT
+1 < X-RateLimit-Reset: 1677185562
+1 < Retry-After: 20
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 90
+1 < ETag: W/"5a-t/9yHfGdyDBXrmqbvzabpvkOJ4o"
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+
+15:52:41.269 [Test worker] ERROR com.intuit.karate - classpath:members/put/put_member.feature:31
+Then status 400
+status code was: 429, expected: 400, response time in milliseconds: 2, url: http://localhost:5002/api/members/2, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/put/put_member.feature:31
+---------------------------------------------------------
+feature: classpath:members/put/put_member.feature
+scenarios:  2 | passed:  0 | failed:  2 | time: 0.0159
+---------------------------------------------------------
+
+15:52:41.342 [Test worker] INFO  com.intuit.karate.Suite - <<fail>> feature 4 of 4 (0 remaining) classpath:members/put/put_member.feature
+15:52:41.343 [Test worker] DEBUG com.intuit.karate.Suite - waiting for 4 features to complete
+Karate version: 1.3.1
+======================================================
+elapsed:   2.66 | threads:    1 | thread time: 0.47 
+features:     4 | skipped:    0 | efficiency: 0.18
+scenarios:   10 | passed:     1 | failed: 9
+======================================================
+>>> failed features:
+status code was: 404, expected: 200, response time in milliseconds: 31, url: http://localhost:5002/api/members/5, response: 
+{"msg":"Member with id 5 doesn't exist"}
+classpath:members/delete/delete_member.feature:15
+status code was: 429, expected: 200, response time in milliseconds: 2, url: http://localhost:5002/api/members, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/get/get_member.feature:14
+status code was: 429, expected: 200, response time in milliseconds: 1, url: http://localhost:5002/api/members/2, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/get/get_member.feature:22
+status code was: 429, expected: 404, response time in milliseconds: 1, url: http://localhost:5002/api/members/200, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/get/get_member.feature:31
+status code was: 429, expected: 201, response time in milliseconds: 2, url: http://localhost:5002/api/members, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/post/post_member.feature:22
+status code was: 429, expected: 400, response time in milliseconds: 2, url: http://localhost:5002/api/members, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/post/post_member.feature:37
+status code was: 429, expected: 400, response time in milliseconds: 2, url: http://localhost:5002/api/members, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/post/post_member.feature:53
+status code was: 429, expected: 200, response time in milliseconds: 3, url: http://localhost:5002/api/members/1, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/put/put_member.feature:23
+status code was: 429, expected: 400, response time in milliseconds: 2, url: http://localhost:5002/api/members/2, response: 
+{"error":"Too many requests being raised from this IP, please try again after 20 Seconds"}
+classpath:members/put/put_member.feature:31
+<<<
+
+HTML report: (paste into browser to view) | Karate version: 1.3.1
+file:///Users/user/Desktop/Reto%20SisteCredito/auto_api/reto_api/build/karate-reports/karate-summary.html
+===================================================================
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

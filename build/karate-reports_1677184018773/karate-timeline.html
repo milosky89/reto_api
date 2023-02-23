@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"members\/delete\/delete_member[1:12]","start":1677183846496,"end":1677183846955,"title":"members\/delete\/delete_member[1:12] 15:24:06.496-15:24:06.955 Delete a member successful","className":"failed"},{"id":2,"group":2,"content":"members\/delete\/delete_member[2:20]","start":1677183846496,"end":1677183846954,"title":"members\/delete\/delete_member[2:20] 15:24:06.496-15:24:06.954 Delete a member Fail"},{"id":3,"group":3,"content":"members\/get\/get_member[1:11]","start":1677183846496,"end":1677183846954,"title":"members\/get\/get_member[1:11] 15:24:06.496-15:24:06.954 Get all members"},{"id":4,"group":4,"content":"members\/get\/get_member[2:17]","start":1677183846496,"end":1677183846955,"title":"members\/get\/get_member[2:17] 15:24:06.496-15:24:06.955 Get member by ID","className":"failed"},{"id":5,"group":5,"content":"members\/get\/get_member[3:26]","start":1677183846496,"end":1677183846955,"title":"members\/get\/get_member[3:26] 15:24:06.496-15:24:06.955 get member by id not successful","className":"failed"},{"id":6,"group":3,"content":"members\/post\/post_member[1:12]","start":1677183846964,"end":1677183847031,"title":"members\/post\/post_member[1:12] 15:24:06.964-15:24:07.031 Post a member successful","className":"failed"},{"id":7,"group":2,"content":"members\/post\/post_member[2:26]","start":1677183846964,"end":1677183847030,"title":"members\/post\/post_member[2:26] 15:24:06.964-15:24:07.030 Post member with numeric name","className":"failed"},{"id":8,"group":5,"content":"members\/post\/post_member[3:41]","start":1677183846964,"end":1677183847027,"title":"members\/post\/post_member[3:41] 15:24:06.964-15:24:07.027 Post member with different gender","className":"failed"},{"id":9,"group":1,"content":"members\/put\/put_member[1:11]","start":1677183846964,"end":1677183847032,"title":"members\/put\/put_member[1:11] 15:24:06.964-15:24:07.032 Update member successful","className":"failed"},{"id":10,"group":4,"content":"members\/put\/put_member[2:25]","start":1677183846964,"end":1677183847030,"title":"members\/put\/put_member[2:25] 15:24:06.964-15:24:07.030 Update member only name","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
