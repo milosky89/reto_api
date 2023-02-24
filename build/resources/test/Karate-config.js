@@ -14,6 +14,7 @@ function fn() {
   } else if (env == 'e2e') {
     // customize
   }
+
   karate.configure('connectTimeout', 30000);
   karate.configure('readTimeout', 30000);
   return config;
